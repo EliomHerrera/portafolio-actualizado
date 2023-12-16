@@ -8,8 +8,30 @@
 }
 
 :root {
-    --tema: violet;
+    --tema: grey;
     --p10: 10px;
+}
+
+.none {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.input-t2 {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+
+    &:focus {
+        border-bottom: 5px solid var(--tema);
+    }
 }
 
 a {
@@ -18,67 +40,20 @@ a {
     padding: 10px;
 }
 
-.btn-del {
+.btn {
     width: 100%;
     height: 40px;
-    background: rgb(252, 144, 144);
-    color: var(--txWhite);
     border: none;
     transition: all .1s;
     box-shadow: 1px 1px 5px black;
 
     &:active {
         background: white;
-        color: red;
         box-shadow: 1px 1px 5px black;
     }
-}
 
-.btn-save {
-    width: 100%;
-    height: 40px;
-    background: rgb(255, 234, 234);
-    color: var(--txWhite);
-    border: none;
-    transition: all .1s;
-    box-shadow: 1px 1px 5px black;
-
-    &:active {
-        background: white;
-        color: grey;
-        box-shadow: 1px 1px 5px black;
-    }
-}
-
-.btn-send {
-    width: 100%;
-    height: 40px;
-    background: rgb(144, 144, 245);
-    color: var(--txWhite);
-    border: none;
-    transition: all .1s;
-    box-shadow: 1px 1px 5px black;
-
-    &:active {
-        background: white;
-        color: blue;
-        box-shadow: 1px 1px 5px black;
-    }
-}
-
-.btn-edit {
-    width: 100%;
-    height: 40px;
-    background: rgb(143, 252, 143);
-    color: var(--txWhite);
-    border: none;
-    transition: all .1s;
-    box-shadow: 1px 1px 5px black;
-
-    &:active {
-        background: white;
-        color: rgb(67, 138, 67);
-        box-shadow: 1px 1px 5px black;
+    &:hover {
+        border: 1px solid #303134;
     }
 }
 
@@ -95,15 +70,15 @@ a {
     justify-content: space-between;
     align-items: center;
     color: white;
-    height: 3em;
+    height: 4em;
 
     .header-title {
-        padding: 5px var(--p10);
-        border: 2px solid var(--tema);
+        padding: 20px;
+        cursor: pointer;
 
         &:hover {
-            background: white;
-            color: var(--tema);
+            transition: 1s;
+            transform: translate(1px) rotate(1turn);
         }
     }
 
@@ -211,22 +186,24 @@ a {
         position: absolute;
         display: block;
         width: 100%;
+        z-index: 2;
     }
 }
 
 .dropdown-title {
     padding: var(--p10);
+    border-bottom: 1px solid white;
+
 }
 
 .dropdown-content {
     display: none;
-    background: white;
 }
 
 .dropdown-item {
     background: var(--tema);
     padding: var(--p10);
-    margin: 2px;
+    border-bottom: 1px solid white;
 
     &:hover {
         background: black;
@@ -237,24 +214,19 @@ a {
     background: var(--tema);
     box-shadow: 1px 1px 5px black;
     padding: 2px;
-    margin: 5px;
+    margin: 20px 5px;
     min-width: 200px;
-
-    &:hover .acordeon-content {
-        display: block;
-    }
 
     .acordeon-title {
         padding: var(--p10);
         color: white;
     }
 
-    .acordeon-content {
-        display: none;
-    }
+    .acordeon-content {}
 
     .acordeon-item {
-        background: white;
+        background: beige;
+        border: 10px solid var(--tema);
         padding: 20px 40px;
     }
 }
@@ -289,6 +261,46 @@ a {
     }
 }
 
+.table {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 1px 1px 10px gray;
+
+    .table-title {
+        background: var(--tema);
+        color: white;
+        padding: 10px;
+    }
+
+    .table-content {}
+
+    .table-item {
+        color: black;
+        font-weight: 500;
+        padding: var(--p10);
+        background: cornsilk;
+        border-bottom: solid 4px var(--tema);
+    }
+}
+
+.form {
+    padding: 40px;
+
+    .form-title {
+        padding: 10px;
+    }
+
+    .form-content {
+        margin: 20px;
+    }
+
+    .form-item {
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+}
+
 /* Estilos para móviles */
 @media only screen and (max-width: 767px) {
 
@@ -311,6 +323,7 @@ a {
 
         .menu-title {
             display: block;
+            margin-bottom: 1px;
         }
 
         .menu-content {
@@ -322,12 +335,13 @@ a {
 
         .menu-item {
             display: none;
-            margin: 1px;
+            margin-bottom: 1px;
 
             &:hover {
                 background: black;
-                color: var(--tema);
+                color: white;
             }
         }
     }
+
 }
