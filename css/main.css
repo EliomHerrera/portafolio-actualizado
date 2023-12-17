@@ -8,7 +8,8 @@
 }
 
 :root {
-    --tema: grey;
+    --tema: blue;
+    --text: white;
     --p10: 10px;
 }
 
@@ -36,8 +37,12 @@
 
 a {
     display: block;
-    color: white;
-    padding: 10px;
+    color: var(--text);
+    padding: var(--p10);
+
+    &:hover {
+        color: var(--tema);
+    }
 }
 
 .btn {
@@ -69,14 +74,12 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
-    height: 4em;
 
     .header-title {
-        padding: 20px;
         cursor: pointer;
 
         &:hover {
+            background: white;
             transition: 1s;
             transform: translate(1px) rotate(1turn);
         }
@@ -88,15 +91,10 @@ a {
 
     .header-item {
         display: inline-block;
-        padding: var(--p10);
 
         &:hover {
             background: white;
             color: var(--tema);
-
-            & a {
-                color: var(--tema);
-            }
         }
     }
 }
@@ -126,10 +124,10 @@ a {
 .aside {
     background: var(--tema);
     border: solid 1px var(--tema);
-    padding: 10px;
+    padding: var(--p10);
     margin: 10px;
 
-    color: white;
+    color: var(--text);
     text-align: center;
     grid-column: 1/2;
 
@@ -150,11 +148,6 @@ a {
         &:hover {
             background: white;
             color: var(--tema);
-
-            & a {
-                color: var(--tema);
-
-            }
         }
     }
 }
@@ -164,7 +157,7 @@ a {
     grid-column: 1/-1;
     text-align: center;
     padding: var(--p10);
-    color: white;
+    color: var(--text);
     margin-top: 2em;
 
     .footer-title {}
@@ -179,7 +172,7 @@ a {
     position: relative;
     background: var(--tema);
     text-align: center;
-    color: white;
+    color: var(--text);
     margin: 5px;
 
     &:hover .dropdown-content {
@@ -219,7 +212,7 @@ a {
 
     .acordeon-title {
         padding: var(--p10);
-        color: white;
+        color: var(--text);
     }
 
     .acordeon-content {}
@@ -233,7 +226,7 @@ a {
 
 .menu {
     grid-column: 1/-1;
-    color: white;
+    color: var(--text);
     background: var(--tema);
     display: flex;
     align-items: center;
@@ -251,12 +244,8 @@ a {
     .menu-item {
 
         &:hover {
-            background: white;
             color: var(--tema);
-        }
-
-        & a {
-            padding: 10px;
+            background: white;
         }
     }
 }
@@ -269,8 +258,8 @@ a {
 
     .table-title {
         background: var(--tema);
-        color: white;
-        padding: 10px;
+        color: var(--text);
+        padding: var(--p10);
     }
 
     .table-content {}
@@ -288,7 +277,7 @@ a {
     padding: 40px;
 
     .form-title {
-        padding: 10px;
+        padding: var(--p10);
     }
 
     .form-content {
@@ -296,7 +285,7 @@ a {
     }
 
     .form-item {
-        padding: 10px;
+        padding: var(--p10);
         margin-bottom: 20px;
     }
 }
@@ -339,7 +328,7 @@ a {
 
             &:hover {
                 background: black;
-                color: white;
+                color: var(--text);
             }
         }
     }
