@@ -1,10 +1,10 @@
-let container = document.querySelectorAll('.acordeon')
+let acordeon = document.querySelectorAll('.acordeon')
 let headerItem = document.querySelectorAll('.header-item')
 let mainContent = document.querySelector('.main-content')
 let mainItem = document.querySelectorAll('.main-item')
 
 // acordeon
-container.forEach(i => {
+acordeon.forEach(i => {
     i.addEventListener("click", () => {
         addClassAcordeon()
         i.children[1].classList.remove("none")
@@ -12,15 +12,12 @@ container.forEach(i => {
 })
 
 function addClassAcordeon() {
-    container.forEach(i => {
+    acordeon.forEach(i => {
         i.children[1].classList.add("none")
     })
 }
 
 addClassAcordeon()
-
-console.log(container[0].children[1].classList.remove("none"))
-
 
 // remove nodo Router
 function removeMain() {

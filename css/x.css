@@ -1,0 +1,35 @@
+ul {
+    background: blue;
+    color: white;
+}
+
+li {
+    list-style: none;
+}
+
+ul::after {
+    content: "Gracias";
+    color: white;
+    font-size: 4em;
+}
+
+li::before {
+    content: "X ";
+    color: red;
+}
+
+
+.para p:first-child {
+    color: red;
+    font-size: 40px;
+}
+
+.para p:last-child {
+    color: green;
+    font-size: 40px;
+
+}
+
+.para div:last-of-type {
+    background: darkblue;
+}
